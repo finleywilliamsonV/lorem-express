@@ -21,15 +21,17 @@ block content
 
       .form-group.col-md-3
         label(for='variety') Variety
-        .d-flex
-          select#variety.form-control(name='variety')
-            option Lorem Ipsum
-            option Cupcake Ipsum
-            option Hipster Ipsum
-          button#generate-button.btn.btn-primary.ml-2(type='submit') GENERATE
+        select#variety.form-control(name='variety')
+          option Lorem Ipsum
+          option Cupcake Ipsum
+          option Hipster Ipsum
+    
+    .container.text-center
+      button#generate-button.btn.btn-primary(type='submit') GENERATE
 
   if (values)
-    h2.title-2 Generated Text (#{values.quantity_selected} #{values.type_selected})
+    h2.title-2 Generated Text 
+      span.text-secondary (#{values.quantity_selected} #{values.type_selected}, #{values.variety_selected})
 
     #loremIpsumText
       if (values.type_selected === 'Paragraphs')
