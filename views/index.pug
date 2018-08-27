@@ -5,4 +5,29 @@ block content
     .container.text-center
       p.display-4.title Lorem Ipsum Generator 2.0
 
-      
+  form(name='options', action='/', method='POST')
+    .form-group.row
+      .col-md-2
+      .col-md-3
+        input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
+      .col-md-3
+        select#selected.form-control(name='selected')
+          option(selected='') Paragraphs
+          option Words
+          option Lists
+      .col-md-2
+        button.btn.btn-primary(type='submit') Submit
+      .col-md-3
+
+  if (values)
+    h2.title-2 Generated Text (#{values.quantity_selected} #{values.type_selected})
+
+    if (values.type_selected === 'Paragraphs')
+      each paragraph in values.generated_text
+        p= paragraph
+    else if (values.type_selected === 'Words')
+      p= values.generated_text
+    else
+      ul
+        each listItem in values.generated_text
+          li= listItem
