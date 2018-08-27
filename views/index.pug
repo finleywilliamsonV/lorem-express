@@ -1,33 +1,43 @@
 extends layout
 
 block content
-  jumbotron
+  .jumbotron
     .container.text-center
       p.display-4.title Lorem Ipsum Generator 2.0
 
-  form(name='options', action='/', method='POST')
-    .form-group.row
-      .col-md-2
-      .col-md-3
+  form#selection-form(name='options', action='/', method='POST')
+
+    #weird-row.form-row.d-flex.justify-content-center
+      .form-group.col-md-3
+        label(for='quantity') Quantity
         input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
-      .col-md-3
+
+      .form-group.col-md-3
+        label(for='selected') Content Type
         select#selected.form-control(name='selected')
-          option(selected='') Paragraphs
+          option(selected) Paragraphs
           option Words
           option Lists
-      .col-md-2
-        button.btn.btn-primary(type='submit') Submit
-      .col-md-3
+
+      .form-group.col-md-3
+        label(for='variety') Variety
+        .d-flex
+          select#variety.form-control(name='variety')
+            option Lorem Ipsum
+            option Cupcake Ipsum
+            option Hipster Ipsum
+          button#generate-button.btn.btn-primary.ml-2(type='submit') GENERATE
 
   if (values)
     h2.title-2 Generated Text (#{values.quantity_selected} #{values.type_selected})
 
-    if (values.type_selected === 'Paragraphs')
-      each paragraph in values.generated_text
-        p= paragraph
-    else if (values.type_selected === 'Words')
-      p= values.generated_text
-    else
-      ul
-        each listItem in values.generated_text
-          li= listItem
+    #loremIpsumText
+      if (values.type_selected === 'Paragraphs')
+        each paragraph in values.generated_text
+          p= paragraph
+      else if (values.type_selected === 'Words')
+        p= values.generated_text
+      else
+        ul
+          each listItem in values.generated_text
+            li= listItem

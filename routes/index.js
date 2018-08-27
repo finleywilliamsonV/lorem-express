@@ -24,14 +24,16 @@ router.post('/', function(req, res, next) {
     }
   }
 
-  let tempText = loremIpsumGenerator.generateText(req.body.quantity, req.body.selected);
-  let values = {
-    quantity_selected: req.body.quantity,
-    type_selected: req.body.selected,
-    generated_text: tempText
-  };
+  let tempText = loremIpsumGenerator.generateText(req.body.quantity, req.body.selected, req.body.variety, function(result) {
 
-  return res.render('index', {title: 'Home', values: values});
+    let values = {
+      quantity_selected: req.body.quantity,
+      type_selected: req.body.selected,
+      generated_text: result
+    };
+  
+    return res.render('index', {values: values});
+  });
 
 });
 
