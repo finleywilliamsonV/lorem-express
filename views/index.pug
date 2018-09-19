@@ -5,29 +5,30 @@ block content
     .container.text-center
       p.display-4.title Lorem Ipsum Generator 2.0
 
-  form#selection-form(name='options', action='/', method='POST')
+  .form-and-button
+    form#selection-form(name='options', action='/', method='POST')
 
-    #weird-row.form-row.d-flex.justify-content-center
-      .form-group.col-md-3
-        label(for='quantity') Quantity
-        input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
+      #weird-row.form-row.d-flex.justify-content-center
+        .form-group.col-md-3
+          label(for='quantity') Quantity
+          input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
 
-      .form-group.col-md-3
-        label(for='selected') Content Type
-        select#selected.form-control(name='selected')
-          option(selected) Paragraphs
-          option Words
-          option Lists
+        .form-group.col-md-3
+          label(for='selected') Content Type
+          select#selected.form-control(name='selected')
+            option(selected) Paragraphs
+            option Words
+            option Lists
 
-      .form-group.col-md-3
-        label(for='variety') Variety
-        select#variety.form-control(name='variety')
-          option Lorem Ipsum
-          option Cupcake Ipsum
-          option Hipster Ipsum
-    
-    .container.text-center
-      button#generate-button.btn.btn-primary(type='submit') GENERATE
+        .form-group.col-md-3
+          label(for='variety') Variety
+          select#variety.form-control(name='variety')
+            option Lorem Ipsum
+            option Cupcake Ipsum
+            option Hipster Ipsum
+      
+      .container.text-center
+        button#generate-button.btn.btn-primary(type='submit') GENERATE
 
   if (values)
     h2.title-2 Generated Text 

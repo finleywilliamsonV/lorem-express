@@ -2,6 +2,7 @@
   /* border: red solid 1px; */
 }
 
+
 #selection-form {
   margin-bottom: 40px;
 }
@@ -19,4 +20,8 @@
 #loremIpsumText {
   width: 80%;
   margin: 0 auto;
+}
+
+.navbar-brand {
+  margin-top: 50px;
 }
