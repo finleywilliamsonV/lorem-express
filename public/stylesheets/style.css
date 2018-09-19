@@ -1,22 +1,22 @@
-* {
+/* * {
   border: red solid 1px;
-}
+} */
 
 #selection-form {
-  margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 #weird-row {
-  width: 100%;
+	width: 100%;
 }
 
 .title-2 {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 20px;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 #loremIpsumText {
-  width: 80%;
-  margin: 0 auto;
+	width: 80%;
+	margin: 0 auto;
 }
