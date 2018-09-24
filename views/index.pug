@@ -3,44 +3,46 @@ extends layout
 block content
   .jumbotron
     .container.text-center
-      p.display-4.title Lorem Ipsum Generator 2.0
+      p.display-4.title#example-title Lorem Ipsum Generator 2.0
 
-  .form-and-button
-    form#selection-form(name='options', action='/', method='POST')
+  .card.my-4.mx-auto.py-4#form-card
+    .form-and-button
+      form#selection-form(name='options', action='/', method='POST')
 
-      #weird-row.form-row.d-flex.justify-content-center
-        .form-group.col-md-3
-          label(for='quantity') Quantity
-          input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
+        #weird-row.form-row.d-flex.justify-content-center
+          .form-group.col-md-3
+            label(for='quantity') Quantity
+            input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
 
-        .form-group.col-md-3
-          label(for='selected') Content Type
-          select#selected.form-control(name='selected')
-            option(selected) Paragraphs
-            option Words
-            option Lists
+          .form-group.col-md-3
+            label(for='selected') Content Type
+            select#selected.form-control(name='selected')
+              option(selected) Paragraphs
+              option Words
+              option Lists
 
-        .form-group.col-md-3
-          label(for='variety') Variety
-          select#variety.form-control(name='variety')
-            option Lorem Ipsum
-            option Cupcake Ipsum
-            option Hipster Ipsum
-            
-      .container.text-center
-        button#generate-button.btn.btn-primary.ml-2(type='submit') GENERATE
+          .form-group.col-md-3
+            label(for='variety') Variety
+            select#variety.form-control(name='variety')
+              option Lorem Ipsum
+              option Cupcake Ipsum
+              option Hipster Ipsum
+
+        .container.text-center
+          button#generate-button.btn.btn-primary.ml-2(type='submit') GENERATE
 
   if (values)
-    h2.title-2 Generated Text 
-      span.text-secondary (#{values.quantity_selected} #{values.type_selected}, #{values.variety_selected})
+    .card.mx-auto.p-4#generated-text-card
+      h2.title-2.mb-3 Generated Text 
+        span.text-secondary (#{values.quantity_selected} #{values.type_selected}, #{values.variety_selected})
 
-    #loremIpsumText
-      if (values.type_selected === 'Paragraphs')
-        each paragraph in values.generated_text
-          p= paragraph
-      else if (values.type_selected === 'Words')
-        p= values.generated_text
-      else
-        ul
-          each listItem in values.generated_text
-            li= listItem
+      #lorem-ipsum-text
+        if (values.type_selected === 'Paragraphs')
+          each paragraph in values.generated_text
+            p= paragraph
+        else if (values.type_selected === 'Words')
+          p= values.generated_text
+        else
+          ul
+            each listItem in values.generated_text
+              li= listItem
