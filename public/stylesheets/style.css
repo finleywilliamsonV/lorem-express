@@ -2,7 +2,6 @@
   border: red solid 1px;
 } */
 
-
 #selection-form {
 	margin-bottom: 40px;
 }
@@ -18,20 +17,10 @@
 }
 
 #loremIpsumText {
-<<<<<<< HEAD
-  width: 80%;
-  margin: 0 auto;
-}
-
-.navbar-brand {
-  margin-top: 50px;
-}
-=======
 	width: 80%;
 	margin: 0 auto;
 }
 
 .navbar-brand {
-  margin-top: 50px;
+	margin-top: 50px;
 }
->>>>>>> master
