@@ -29,6 +29,7 @@ router.post('/', function(req, res, next) {
     let values = {
       quantity_selected: req.body.quantity,
       type_selected: req.body.selected,
+      variety_selected: req.body.variety,
       generated_text: result
     };
   
