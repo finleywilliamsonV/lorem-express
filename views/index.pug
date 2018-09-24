@@ -26,7 +26,9 @@ block content
             option Lorem Ipsum
             option Cupcake Ipsum
             option Hipster Ipsum
-          button#generate-button.btn.btn-primary.ml-2(type='submit') GENERATE
+
+    .container.text-center
+      button#generate-button.btn.btn-primary.ml-2(type='submit') GENERATE
 
   if (values)
     h2.title-2 Generated Text (#{values.quantity_selected} #{values.type_selected})
