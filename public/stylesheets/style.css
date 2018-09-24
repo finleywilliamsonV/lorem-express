@@ -10,14 +10,19 @@
 	width: 100%;
 }
 
+#generatedTextCard {
+	width: 90%;
+	background-color: aquamarine;
+}
+
 .title-2 {
-	width: 80%;
-	margin: 0 auto;
+	/* width: 80%; */
+	/* margin: 0 auto; */
 	margin-bottom: 20px;
 }
 
 #loremIpsumText {
-	width: 80%;
+	/* width: 80%; */
 	margin: 0 auto;
 }
 
