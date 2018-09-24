@@ -1,22 +1,23 @@
 {
-  "name": "lorem-express",
-  "version": "1.0.0",
-  "description": "Lorem Ipsum Generator using Express and MongoDB",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "author": "flwv",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.16.3",
-    "mongo-hacker": "0.0.15",
-    "mongodb": "^3.1.4",
-    "mongoose": "^5.2.10",
-    "pug": "^2.0.3"
-  },
-  "devDependencies": {
-    "body-parser": "^1.18.3",
-    "nodemon": "^1.18.3"
-  }
+	"name": "lorem-express",
+	"version": "1.0.0",
+	"description": "Lorem Ipsum Generator using Express and MongoDB",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"watch": "nodemon app.js"
+	},
+	"author": "flwv",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.16.3",
+		"mongo-hacker": "0.0.15",
+		"mongodb": "^3.1.4",
+		"mongoose": "^5.2.10",
+		"pug": "^2.0.3"
+	},
+	"devDependencies": {
+		"body-parser": "^1.18.3",
+		"nodemon": "^1.18.4"
+	}
 }
