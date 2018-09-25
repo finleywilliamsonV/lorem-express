@@ -1,3 +1,15 @@
 * {
 	/* border: red solid 1px; */
 }
+
+.form-row {
+	width: 100%;
+}
+
+#selection-form {
+	width: 80%;
+}
+
+#generated-text-container {
+	width: 80%;
+}
