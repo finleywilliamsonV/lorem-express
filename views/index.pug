@@ -1,49 +1,87 @@
 extends layout
 
 block content
-  .jumbotron
-    .container.text-center
-      p.display-4.title#example-title Lorem Ipsum Generator 2.0
+  
 
-  #form-and-button
-    form#selection-form.mx-auto(name='options', action='/', method='POST')
+  .container-fluid#master-container
+    .row#row-1
+      .col-lg-3
+      .col
+        .container-fluid#main-heading
+        h1.display-5.white-text Lorem Ipsum Generator
+        hr#heading-underline(align="left")
+        p.white-text Created with Express, Bootstrap, MongoDB, and Pug
 
-      .form-row.d-flex.justify-content-between
-        .form-group.col-md-4
-          label(for='quantity') Quantity
-          input#quantity.form-control(type='number', placeholder='How Many?', name='quantity')
+    .row.center#row-2
+      //- Instructions
+      .col.mb-5
+        #instructions.white-text
+          h5 How to use the generator —
+          ul#instructions-list
+            li Input quantity
+            li Select content type
+            li Select generator template
+            li Click 'Generate'
+            li Click 'Copy' to save text to clipboard
+      
+      //- Generator
+      .col-lg-9
+        .card.rounded
+          .card-header.rounded-top
+            form#selection-form(name='options', action='/', method='POST')
+              .form-row#selection-form-row
 
-        .form-group.col-md-4
-          label(for='selected') Content Type
-          select#selected.form-control(name='selected')
-            option(selected) Paragraphs
-            option Words
-            option Lists
+                //- Hidden Column
+                .col.d-none.d-lg-block.d-xl-none
 
-        .form-group.col-md-4
-          label(for='variety') Variety
-          select#variety.form-control(name='variety')
-            option Lorem Ipsum
-            option Cupcake Ipsum
-            option Hipster Ipsum
+                //- Quantity Select
+                .col-sm-5.col-md-6.col-lg-3.col-xl-2.center#quantity-select-column
+                  input#quantity-select(type='number', placeholder='How Many?', name='quantity').m-2
 
-      .form-row
-        .form-group.col-md-12
-          button#generate-button.btn.btn-primary.float-right.ml-2(type='submit') GENERATE
+                //- Type Select
+                .col-sm-7.col-md-6.col-lg-5.col-xl-4.center#type-select-column
+                  .btn-group.btn-group-toggle(data-toggle="buttons").m-2
+                    label.btn.btn-light.active
+                      input#select_paragraphs(type="radio", name="typeSelected" value="Paragraphs" checked)
+                      | Paragraphs
+                    label.btn.btn-light
+                      input#select_lists(type="radio", name="typeSelected" value="Lists")
+                      | Lists
+                    label.btn.btn-light
+                      input#select_words(type="radio", name="typeSelected" value="Words")
+                      | Words
+                
+                //- Variety Select
+                .col-sm-6.col-md-6.col-lg-3.col-xl-3.center#variety-column
+                  select.form-control#variety-select(name="variety").m-2
+                    option(value="Lorem Ipsum") Lorem Ipsum
+                    option(value="Cupcake Ipsum") Cupcake Ipsum
+                    option(value="Hipster Ipsum") Hipster Ipsum
+
+                //- Hidden Column
+                .col.d-none.d-lg-block.d-xl-none
+
+                //- Generate & Copy 
+                .col.center.col-xl-3#generate-copy-column
+                  button.btn.btn-success.m-2(type="submit") Generate
+                  button.btn.btn-light.m-2#copy-button(data-toggle="popover") Copy
+          
+          .card-body#generated-text-card
+            #lorem-ipsum-text
+              if (values)
+                if (values.type_selected === 'Paragraphs')
+                  each paragraph in values.generated_text
+                    p= paragraph
+                else if (values.type_selected === 'Words')
+                  p= values.generated_text
+                else
+                  ul
+                    each listItem in values.generated_text
+                      li= listItem
+
+    .row
+      .col-lg-3
+      .col.center
+        p.blue-text.mt-3 Special thanks to #[a(href='http://www.cupcakeipsum.com/') Cupcake Ipsum] and #[a(href='https://hipsum.co/') Hipster Ipsum] for letting me borrow your generated text :D
+
         
-
-  if (values)
-    #generated-text-container.mx-auto
-      h2.title-2.mb-3 Generated Text 
-        span.text-secondary (#{values.quantity_selected} #{values.type_selected}, #{values.variety_selected})
-
-      #lorem-ipsum-text
-        if (values.type_selected === 'Paragraphs')
-          each paragraph in values.generated_text
-            p= paragraph
-        else if (values.type_selected === 'Words')
-          p= values.generated_text
-        else
-          ul
-            each listItem in values.generated_text
-              li= listItem
