@@ -1,50 +1,233 @@
-/* * {
-  border: red solid 1px;
-} */
+/* ______________________________ */
+/* LAYOUT STYLES */
+/* ______________________________ */
 
-/* Remove default styling */
-form,
-.jumbotron {
-	margin: 0;
+* {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.5px;
 }
 
-#example-title {
-	font-size: 3rem;
-	margin: 0;
-	padding: 1rem;
+#master-container {
+	max-width: 1400px;
+	margin-top: 2.5rem;
 }
 
-.jumbotron {
-	background-color: #8da9c4;
-	padding: 32px;
-	margin: 1rem;
-}
-
-body {
-	background-color: #222e50;
-}
-
-#form-card {
+#master-container,
+#main-heading {
 	width: 90%;
-	background-color: #4d76a0;
+}
+
+#heading-underline {
+	border: none;
+	height: 3px;
+	max-width: 60%;
+}
+
+#instructions-list {
+	padding-left: 1rem;
+}
+
+#selection-form-row {
+	width: 100%;
+}
+
+#quantity-select {
+	height: 38px;
+	text-align: center;
+	border-radius: 0.5rem;
+}
+
+#quantity-select,
+#variety-select {
+	width: 100%;
+}
+
+#row-2 {
+	margin-top: 2.5rem;
 }
 
 #generated-text-card {
-	width: 90%;
-	background-color: #8da9c4;
-}
-
-.title-2 {
-	/* width: 80%; */
-	/* margin: 0 auto; */
-	/* margin-bottom: 20px; */
+	height: 470px;
+	padding: 48px 48px;
 }
 
 #lorem-ipsum-text {
-	/* width: 80%; */
-	/* margin: 0 auto; */
+	height: 370px;
+	overflow: auto;
 }
 
-.navbar-brand {
-	/* margin-top: 50px; */
+/* ______________________________ */
+/* DISPLAY CLASSES */
+/* ______________________________ */
+
+.center {
+	display: flex;
+	justify-content: center;
 }
+
+.end {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.rounded {
+	border-radius: 1rem !important;
+}
+
+.rounded-top {
+	border-top-left-radius: 1rem !important;
+	border-top-right-radius: 1rem !important;
+}
+
+/* ______________________________ */
+/* COLORS */
+/* ______________________________ */
+
+body {
+	background-color: #778899;
+}
+
+#heading-underline {
+	background-color: #495561;
+}
+
+.card-header {
+	background-color: #495561;
+}
+
+.white-text {
+	color: #fff;
+}
+
+.blue-text {
+	color: #495561;
+}
+
+a {
+	color: #fff;
+}
+
+a:hover {
+	color: red;
+}
+
+/* ______________________________ */
+/* REMOVE DEFAULT STYLES */
+/* ______________________________ */
+
+.card-header {
+	padding: 0;
+}
+
+.card {
+	border: none;
+}
+
+form {
+	margin: 0;
+}
+
+.btn {
+	outline: none;
+	box-shadow: none !important;
+	border: none;
+}
+
+input,
+select {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+label.btn.btn-light.active {
+	background-color: #cacaca !important;
+	outline: none;
+	box-shadow: none !important;
+}
+
+/* ______________________________ */
+/* CUSTOM STYLES FOR GENERATE BUTTON */
+/* ______________________________ */
+
+.btn-success:hover {
+	color: #fff;
+	background-color: #279c71;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+	box-shadow: 0 0 0 0.2rem #30c48e;
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+	color: #fff;
+	background-color: #30c48e;
+}
+
+.btn-success:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+	color: #fff;
+	background-color: #30c48e;
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0, 90, 90, 0.5);
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #30c48e;
+	border: none;
+}
+
+/* ______________________________ */
+
+/* ______________________________ */
+
+/* ______________________________ */
+/* FOR DEVELOPMENT */
+/* ______________________________ */
+
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+	body {
+		background-color: thistle;
+	}
+} */
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+	body {
+		background-color: lightgreen;
+	}
+} */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) {
+	body {
+		background-color: lightsalmon;
+	}
+} */
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {
+	body {
+		background-color: royalblue;
+	}
+} */
+
+/* * {
+	border: red 1px solid;
+} */
