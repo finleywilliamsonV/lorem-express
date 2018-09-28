@@ -6,17 +6,17 @@ const VarietySchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
-    trim: true
+    trim: true,
   },
   fullText: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   paragraphs: {
     type: Array,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const Variety = mongoose.model('Variety', VarietySchema);
