@@ -8,6 +8,7 @@ mongoose.connect(
     'mongodb://localhost:27017/ipsumDB',
     {useNewUrlParser: true}
 );
+
 const db = mongoose.connection;
 // mongo error
 db.on('error', console.error.bind(console, 'connection error'));
@@ -45,6 +46,6 @@ app.use(function(err, req, res, next) {
 });
 
 // listen on port 5000
-app.listen(5000, function() {
-  console.log('\n  *  *  *  LoremExpress running on port 5000  *  *  *\n');
+app.listen(5001, function() {
+  console.log('\n  *  *  *  LoremExpress running on port 5001  *  *  *\n');
 });
