@@ -35,20 +35,20 @@ block content
                 .col.d-none.d-lg-block.d-xl-none
 
                 //- Quantity Select
-                .col-sm-5.col-md-6.col-lg-3.col-xl-2.center#quantity-select-column
-                  input#quantity-select(type='number', placeholder='How Many?', name='quantity').m-2
+                .col.col-sm-5.col-md-6.col-lg-3.col-xl-2.center#quantity-select-column
+                  input#quantity-select(type='number', placeholder='How Many?', name='quantity')
 
                 //- Type Select
                 .col-sm-7.col-md-6.col-lg-5.col-xl-4.center#type-select-column
-                  .btn-group.btn-group-toggle(data-toggle="buttons").m-2
-                    label.btn.btn-light.active
-                      input#select_paragraphs(type="radio", name="typeSelected" value="Paragraphs" checked)
+                  .btn-group.btn-group-toggle(data-toggle="buttons").m-2#select-button-group
+                    label.btn.btn-light.active#input-label-paragraphs
+                      input#select-paragraphs(type="radio", name="typeSelected" value="Paragraphs" checked)
                       | Paragraphs
-                    label.btn.btn-light
-                      input#select_lists(type="radio", name="typeSelected" value="Lists")
+                    label.btn.btn-light#input-label-lists
+                      input#select-lists(type="radio", name="typeSelected" value="Lists")
                       | Lists
-                    label.btn.btn-light
-                      input#select_words(type="radio", name="typeSelected" value="Words")
+                    label.btn.btn-light#input-label-words
+                      input#select-words(type="radio", name="typeSelected" value="Words")
                       | Words
                 
                 //- Variety Select
@@ -63,8 +63,8 @@ block content
 
                 //- Generate & Copy 
                 .col.center.col-xl-3#generate-copy-column
-                  button.btn.btn-success.m-2(type="submit") Generate
-                  button.btn.btn-light.m-2#copy-button(data-toggle="popover") Copy
+                  button.btn.btn-success#generate-button(type="submit") Generate
+                  button.btn.btn-light#copy-button(data-toggle="popover") Copy
           
           .card-body#generated-text-card
             #lorem-ipsum-text
